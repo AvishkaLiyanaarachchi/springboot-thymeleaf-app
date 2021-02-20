@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title style=text-align:center>Customer record update form</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <style>
+    body{
+      border: 10px dotted black;
+      padding: 35px;
+      background: lightpink;
+      background-clip: padding-box;
+    }
+  </style>
+</head>
+<body>
+   <div class= "jumbotron text-center">
+      <h1 style=text-align:center>Update Customer Records</h1>
+   </div>
+   
+   <div>
+      <form th:action="@{/process_register}" method="post" 
+         style="max-width: 600px; margin: 0 auto;"
+      th:object="${customer}">
+        <div class="m-3">
+        <div class="form-group row"><br>
+             <label class="col-form-label col-4">Customer ID</label>
+             <div class="col-8">
+               <input type="hidden" class="form-control" th:field="*{customer_id}" required/>
+             </div>
+          </div>
+          <div class="form-group row"><br>
+             <label class="col-form-label col-4">Customer Name</label>
+             <div class="col-8">
+               <input type="text" class="form-control" th:field="*{customer_name}" required/>
+             </div>
+          </div>
+          <div class="form-group row"><br>
+             <label class="col-form-label col-4">Email Address</label>
+             <div class="col-8">
+               <input type="email" class="form-control" th:field="*{email_address}" required/>
+             </div>
+          </div>
+           <div class="form-group row"><br>
+             <label class="col-form-label col-4">Contact Number</label>
+             <div class="col-8">
+               <input type="text" class="form-control" th:field="*{conatact_num}" required/>
+             </div>
+          </div>
+          <div class="form-group row"><br>
+             <label class="col-form-label col-4">Address</label>
+             <div class="col-8">
+               <input type="text" class="form-control" th:field="*{address}" required/>
+             </div>
+          </div>
+           <div class="form-group row"><br>
+             <label class="col-form-label col-4">Coffee shop ID</label>
+             <div class="col-8">
+               <input type="number" class="form-control" th:field="*{tbl_coffee_shop_coffee_shop_ID}" required/>
+             </div>
+          </div>
+          <div><br>
+            <button type="submit" class="btn btn-danger col-large">Update</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+</body>
+</html>
